@@ -1,0 +1,77 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: #ffe6e6;
+  font-family: 'Arial', sans-serif;
+  text-align: center;
+  overflow: hidden;
+  margin: 0;
+}
+
+.container {
+  position: relative;
+}
+
+button {
+  padding: 15px 30px;
+  font-size: 22px;
+  background: #ff4d4d;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+button:hover {
+  background: #ff1a1a;
+}
+
+h1 {
+  color: #ff1a1a;
+  font-size: 50px;
+  margin-top: 20px;
+  display: none;
+}
+
+.heart {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background: red;
+  transform: rotate(45deg);
+  animation: float 2s linear forwards;
+}
+
+.heart::before,
+.heart::after {
+  content: "";
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background: red;
+  border-radius: 50%;
+}
+
+.heart::before {
+  top: -10px;
+  left: 0;
+}
+
+.heart::after {
+  left: 10px;
+  top: 0;
+}
+
+@keyframes float {
+  0% {
+    opacity: 1;
+    transform: translateY(0) rotate(45deg);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-200px) rotate(45deg);
+  }
+}
